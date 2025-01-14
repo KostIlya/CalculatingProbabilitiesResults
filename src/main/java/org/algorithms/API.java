@@ -59,7 +59,7 @@ public class API {
                         builder.append(" : ");
                         builder.append(String.format("%.2f", res.getProbability()));
 
-                        output.write(builder.toString() + "\n");
+                        output.write(builder + "\n");
                     }
                 }
             } else {

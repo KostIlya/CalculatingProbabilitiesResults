@@ -14,6 +14,6 @@ public class Main {
         api.calculate(clubs);
 
         api.print(true);
-        api.writeFile(pathToFileWrite, false);
+        api.writeFile(pathToFileWrite, true);
     }
 }
