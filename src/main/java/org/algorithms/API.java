@@ -88,7 +88,7 @@ public class API {
         try (BufferedWriter output = new BufferedWriter(new FileWriter(pathToFileCSV))) {
             StringBuilder builder;
 
-            output.write("Клуб 1,Клуб 2,Вероятность встречи\n");
+            output.write("Клуб 1,Клуб 2,Вероятность встречи");
             if (!isNullProbability) {
                 for (var res : resultList) {
                     builder = new StringBuilder();
@@ -97,7 +97,7 @@ public class API {
                         builder.append(res.getClub2()).append(",");
                         builder.append(String.format("%.2f", res.getProbability()));
 
-                        output.write(builder + "\n");
+                        output.write(builder.toString());
                     }
                 }
             } else {
@@ -107,7 +107,7 @@ public class API {
                     builder.append(res.getClub2()).append(",");
                     builder.append(String.format("%.2f", res.getProbability()));
 
-                    output.write(builder + "\n");
+                    output.write(builder.toString());
                 }
             }
         } catch (IOException e) {
