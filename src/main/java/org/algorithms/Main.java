@@ -16,6 +16,6 @@ public class Main {
 
         api.print(true);
         api.writeFile(pathToFileWrite, true);
-        api.writeFile(pathToFileCSVWrite, true);
+        api.writeFileCSV(pathToFileCSVWrite, true);
     }
 }
