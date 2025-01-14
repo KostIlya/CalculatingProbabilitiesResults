@@ -84,6 +84,37 @@ public class API {
         }
     }
 
+    public void writeFileCSV(String pathToFileCSV, boolean isNullProbability) {
+        try (BufferedWriter output = new BufferedWriter(new FileWriter(pathToFileCSV))) {
+            StringBuilder builder;
+
+            output.write("Клуб 1\t\t\t  - Клуб 2\t\t\t : Вероятность встречи\n");
+            if (!isNullProbability) {
+                for (var res : resultList) {
+                    builder = new StringBuilder();
+                    if (res.getProbability() != 0) {
+                        builder.append(res.getClub1()).append(",");
+                        builder.append(res.getClub2()).append(",");
+                        builder.append(String.format("%.2f", res.getProbability()));
+
+                        output.write(builder + "\n");
+                    }
+                }
+            } else {
+                for (var res : resultList) {
+                    builder = new StringBuilder();
+                    builder.append(res.getClub1()).append(",");
+                    builder.append(res.getClub2()).append(",");
+                    builder.append(String.format("%.2f", res.getProbability()));
+
+                    output.write(builder + "\n");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void print(boolean isNullProbability) {
         int maxTab = 4;
         int tabToSpace = 4;
