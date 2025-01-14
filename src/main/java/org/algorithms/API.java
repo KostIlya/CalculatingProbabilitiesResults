@@ -88,7 +88,7 @@ public class API {
         try (BufferedWriter output = new BufferedWriter(new FileWriter(pathToFileCSV))) {
             StringBuilder builder;
 
-            output.write("Клуб 1\t\t\t  - Клуб 2\t\t\t : Вероятность встречи\n");
+            output.write("Клуб 1,Клуб 2,Вероятность встречи\n");
             if (!isNullProbability) {
                 for (var res : resultList) {
                     builder = new StringBuilder();
