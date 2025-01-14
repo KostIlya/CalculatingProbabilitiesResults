@@ -14,7 +14,7 @@ public class ParserCSV {
             String line;
             String[] lines;
             while ((line = input.readLine()) != null) {
-                lines = line.split(";");
+                lines = line.split(",");
                 String name = lines[0];
                 String country = lines[1];
                 char group = lines[2].charAt(0);
