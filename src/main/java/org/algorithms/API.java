@@ -3,6 +3,7 @@ package org.algorithms;
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class API {
     private final List<ProbabilityOfMeet> resultList;
@@ -89,15 +90,17 @@ public class API {
             StringBuilder builder;
 
             output.write("Клуб 1,Клуб 2,Вероятность встречи");
+            output.write("\n");
             if (!isNullProbability) {
                 for (var res : resultList) {
                     builder = new StringBuilder();
                     if (res.getProbability() != 0) {
                         builder.append(res.getClub1()).append(",");
                         builder.append(res.getClub2()).append(",");
-                        builder.append(String.format("%.2f", res.getProbability()));
+                        builder.append(String.format(Locale.ROOT, "%.2f", res.getProbability()));
 
                         output.write(builder.toString());
+                        output.write("\n");
                     }
                 }
             } else {
@@ -105,9 +108,10 @@ public class API {
                     builder = new StringBuilder();
                     builder.append(res.getClub1()).append(",");
                     builder.append(res.getClub2()).append(",");
-                    builder.append(String.format("%.2f", res.getProbability()));
+                    builder.append(String.format(Locale.ROOT, "%.2f", res.getProbability()));
 
                     output.write(builder.toString());
+                    output.write("\n");
                 }
             }
         } catch (IOException e) {
